@@ -41,6 +41,8 @@
             </feature>
         </config-file>
       <!--
+A equipe de revisão da Apple mandou eu retirar o valor "audio" abaixo para aprovar meu app.
+O valor "location" já está incluido no plugin "ordova-background-geolocation-lt"
         <config-file target="*-Info.plist" parent="UIBackgroundModes">
             <array>
                 <string>audio</string>
@@ -74,6 +76,12 @@
 
         <config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.WAKE_LOCK" />
+            <uses-permission android:name="android.permission.INTERNET" />
+           <!--
+A permissão de intenet acima eu (Daniel) inclui na tentativa de garantir internet 
+quando em background(segundo plano), não sei se é necessário fazer outras 
+implementações para realmente garantir internet
+            -->
         </config-file>
 
         <source-file
